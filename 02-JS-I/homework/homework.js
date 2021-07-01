@@ -268,8 +268,7 @@ function esVocal(letra){
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   //Escribe tu código aquí
   var vocal = "aeiou"
-  tamaño  = letra.length
-  if(tamaño>1){
+  if(letra.length>1){
     condicion = "Dato incorrecto"
     return condicion
   }
@@ -279,7 +278,6 @@ function esVocal(letra){
       return condicion
     }
   }
-  return condicion
 }
 
 
