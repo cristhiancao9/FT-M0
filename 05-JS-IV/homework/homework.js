@@ -6,14 +6,14 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var gato = {
-    nombre : nombre,
-    edad : edad,
-    meow : function(){
-      return "Meow!"
-    }
-  } 
-  return gato
+ var objeto = {
+   nombre: nombre,
+   edad : edad,
+   meow: function(){
+    return "Meow!"  
+   }
+ }
+ return objeto
 }
 
 
@@ -22,8 +22,8 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-  objeto[property] = null;
-  return objeto;
+  objeto[property] = null
+  return objeto
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -31,16 +31,14 @@ function invocarMetodo(objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
-  objeto[metodo]();
+  objeto[metodo]()
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  var producto  = objetoMisterioso.numeroMisterioso * 5 
-  return producto
-
+  return objetoMisterioso.numeroMisterioso * 5
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -48,7 +46,7 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-  delete objeto[unaPropiedad]
+  delete (objeto[unaPropiedad])
   return objeto
 }
 
@@ -56,13 +54,12 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  var usuario  = {
-    nombre: nombre,
+  var objeto = {
+    nombre : nombre,
     email : email,
-    password : password,
-    
+    password :password,
   }
-  return usuario
+  return objeto
 }
 
 function tieneEmail(usuario) {
@@ -73,7 +70,6 @@ function tieneEmail(usuario) {
     return true
   }
   return false
-  
 }
 
 
@@ -82,7 +78,9 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(objeto[propiedad]) return true
+  if(objeto[propiedad]){
+    return true
+  }
   return false
 }
 
@@ -91,7 +89,9 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(usuario.password === password)return true
+  if(usuario.password===password){
+    return true
+  }
   return false
 }
 
@@ -118,8 +118,13 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for (var i = 0; i<usuarios.length; i++){
-    usuarios[i].esPremium = true
+/* var usuario = {
+  usuario : [
+
+  ]
+  }*/
+  for (var i = 0 ; i<usuarios.length;i++){
+    usuarios[i].esPremium = true    
   }
   return usuarios
 }
@@ -135,7 +140,7 @@ function sumarLikesDeUsuario(usuario) {
   var usuario = {
     nombre: "cris",
     apellido:"muñoz",
-    post: [
+    posts: [
       {
         fechaPublicacion: '',
         visto : 12,
@@ -150,8 +155,8 @@ function sumarLikesDeUsuario(usuario) {
     ]
   } */
   suma = 0
-  for (var i = 0; i<usuario.posts.length; i++){
-    suma += usuario.posts[i].likes
+  for (var i = 0; i<usuario.posts.length;i++){
+    suma += usuario.posts[i].likes 
   }
   return suma
 }
