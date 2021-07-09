@@ -10,6 +10,11 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+    var nuevoArray = []
+    for (const propiedad in objeto) {
+      nuevoArray.push([propiedad,objeto[propiedad]])
+    }
+    return nuevoArray
 }
 
 
@@ -18,14 +23,38 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj = {}
+  for (let i = 0; i < string.length; i++) {
+    if(obj[string[i]]){
+      obj[string[i]]+=1
+    }
+    else{
+      obj[string[i]] = 1
+    }
+    
+  }
+  return obj
 }
 
 
-function capToFront(s) {
+function capToFront(string) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var mayusculas = ''
+  var minusculas = ''
+  var union=''
+  for (let i = 0; i < string.length; i++) {
+    if(string[i].toLowerCase()===string[i]){
+      minusculas += string[i]
+    }
+    else{
+      mayusculas += string[i]
+    }
+
+  }
+  return union = mayusculas+minusculas
 }
 
 
@@ -43,6 +72,14 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var nuevo = numero.toString().split('').reverse().join('')
+  num = parseInt(nuevo)
+  if(numero===num){
+    return "Es capicua"
+  }
+  else{
+    return "No es capicua"
+  }
 }
 
 
@@ -50,6 +87,14 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  for (let i = 0; i < cadena.length; i++) {
+    if(cadena[i]==='a' || cadena[i]==='b' || cadena[i]==='c'){
+        cadena = cadena.replace("a","")
+        cadena = cadena.replace("b","")
+        cadena = cadena.replace("c","")
+    } 
+}
+  return cadena
 }
 
 
